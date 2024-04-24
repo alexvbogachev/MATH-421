@@ -1,0 +1,112 @@
+\documentclass[10pt, oneside]{article} 
+\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry, array}
+
+\geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin = .75in}  
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Everything above is preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Math 421-HW01} 
+\author{Alex Bogachev} 
+\date{Due: Feb 03, 2024} 
+
+\begin{document}
+
+\maketitle 
+
+\hrule
+\vspace{20pt}
+
+    On this week's homework, I collaborated on all the problems with Douglas Marquette. The only resources I used for problem 1 were chapters  1 and 2 of the Spivak textbook and the sample homework document in \LaTeX. For the second problem, I used the forum (https://
+    www.physicsforums.com
+    /threads/
+    prove-if-x-y-are-reals-that-xy-x-y.925572/) to get inspiration for a proof by cases. On problem 3, I used chapters 1 and 2 of the Spivak textbook as well as this forum (https://math.stackexchange.com/questions/
+    1947451/prove-that-if-n-is-an-odd-integer-then-n2-has-a-remainder-of-1-when-divided-by) to inspire my direct proof.
+    
+\vspace{20pt}
+\hrule
+\vspace{20pt}
+
+
+
+Prove the following statements: 
+
+\begin{enumerate}
+    
+    \item If $b$ and $c$ are odd integers and $a$ is an integer, then $ab + ac$ is an even integer
+    
+    \begin{proof}
+    If $b$ and $c$ are odd integers and $a$ is an integer, we want to show that $ab + ac$ is an even integer, that is, we want to show $ab + ac = 2k$ for some integer $k$. By the definition of odd, there exist integers $a$, $b$, and $c$ such that $a=x$, $b=2y+1$, and $c=2z+1$. Using algebra, we obtain:
+    
+    \begin{align*} 
+    ab+bc & = x \cdot(2y+1)+ x \cdot(2z+1)\\
+    & = 2xy + 2xz + 2x\\
+    & = 2(xy+xz+x)
+    \end{align*}
+    
+    $\therefore$ by the closure of the integers under addition and multiplication, $xy+xz+x$ is an integer, call it $k$. Thus $ab+ac = 2k$ and is therefore an even integer, which was to be proved.
+    \end{proof}
+    
+    \item $|x \cdot y| = |x| \cdot |y|$ where $x$ and $y$ are numbers
+    
+    \begin{proof}
+    
+    \begin{description}
+        \item[Case 1:] Both $x$ and $y$ are non-negative. The product of two non-negative numbers, in this case $x$ and $y$, is non-negative. From this, we can deduce $|x \cdot y| = x \cdot y$ from the left-hand side (LHS). Concerning the right-hand side (RHS), we can similarly deduce in the context of $x$ and $y$, $|x| = x$ and $|y| = y$, so $|x| \cdot |y| = x \cdot y$. Thus,
+        \begin{align*}
+        |x\cdot y| & = |x| \cdot |y|\\
+        RHS & = LHS\\
+        \end{align*}
+        $\therefore |x \cdot y| = |x| \cdot |y|$ when $x$ and $y$ are non-negative
+        
+        \item[Case 2:] Both $x$ and $y$ are negative. In this case, when both $x$ and $y$ are negative: 
+        \begin{align*}
+        |-x \cdot -y| & = |x\cdot y|\\
+        |-x|\cdot |-y| & = |x| \cdot |y|\\
+        |x\cdot y| & = |x| \cdot |y|
+        \end{align*}
+        
+        \item[Case 3:] In this case just one of $x$ or $y$ is negative; Therefore, we get:
+        \begin{align*}
+        |x \cdot -y| & = |-xy| = |x\cdot y|\\
+        |x|\cdot |-y| & = |x| \cdot |y|\\
+        |-x \cdot y| & = |-xy| = |x\cdot y|\\
+        |-x|\cdot |y| &  = |x| \cdot |y|\\
+        |x\cdot y|&  = |x| \cdot |y|
+        \end{align*}
+    \end{description}
+    
+    $\therefore$ we have proven by cases that the statement $|x \cdot y| = |x| \cdot |y|$ holds for all negative and non-negative cases of $x$ and $y$.
+    \end{proof}
+
+    \item If $x$ is an odd integer, then $x^2$ has a remainder of 1 when divided by 8, that is $x^2 = 8c+1$ for some integer $c$.
+    
+    \begin{proof}
+    We will prove this statement via direct proof.
+    \begin{description}
+        \item Let $x$ be an odd integer, by definition, $x$ can be written as $2k+1$ for some integer $k$. Furthermore, $x^2$ can be written as:
+        \begin{align*}
+            x^2 & =(2k+1)^2\\
+            &= 4k^2+4k+1\\
+            &= 4k(k+1)+1
+        \end{align*}
+        \item Let $4k(k+1) = 8c$ where $c$ is an integer. Through substitution, we get:
+        \begin{align*}
+            x^2 & =4k(k+1)+1 = 8c+1\\ 
+        \end{align*}
+        \item We know $c$ is an integer because $4k(k+1)$ is an integer by closure of the integers under addition. \\$\therefore$ we have proven directly if $x$ is an odd integer, then $x^2$ has a remainder of 1 when divided by 8, that is $x^2 = 8c+1 $ for some integer $c$.
+    \end{description}
+    \end{proof}
+
+\end{enumerate}
+
+
+
+\end{document}
